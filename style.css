@@ -1,0 +1,31 @@
+.top {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+
+body{
+    background: #007bff;
+}
+
+.intro,
+.quizBox,
+.result_box{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.intro h3 {
+    width: 50%;
+    text-align: center;
+
+}
+
+/* .resultsBox {
+    display: flex;
+    justify-content: space-evenly;
+} */
