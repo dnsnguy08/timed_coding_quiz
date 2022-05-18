@@ -21,10 +21,10 @@ startButton.addEventListener("click", function(event) {
 let questionCount = 0;
 let questionNum = 1;
 let userScore = 0;
-const next_btn = document.querySelector(".option");
+const next_btn = document.getElementById('option');
 
 // if Next Que button clicked
-next_btn.onclick = ()=>{
+next_btn.onclick = function click() {
     console.log('weeee');
     if(questionCount < questions.length - 1){ //if question count is less than total question length
         questionCount++; //increment the questionCount value
@@ -39,10 +39,10 @@ function showQuestions(index){
     const questionText = document.querySelector(".question");
     //creating a new span and div tag for question and option and passing the value using array index
     let questionTag = '<span>'+ questions[index].numb + ". " + questions[index].question +'</span>';
-    let option_tag = '<div class="option"><button>'+ questions[index].options[0] +'</button></div>'
-    + '<div class="option"><button>'+ questions[index].options[1] +'</button></div>'
-    + '<div class="option"><button>'+ questions[index].options[2] +'</button></div>'
-    + '<div class="option"><button>'+ questions[index].options[3] +'</button></div>';
+    let option_tag = '<div><button class="option">'+ questions[index].options[0] +'</button></div>'
+    + '<div><button class="option">'+ questions[index].options[1] +'</button></div>'
+    + '<div><button class="option">'+ questions[index].options[2] +'</button></div>'
+    + '<div><button class="option">'+ questions[index].options[3] +'</button></div>';
     questionText.innerHTML = questionTag; //adding new span tag inside questionTag
     option_list.innerHTML = option_tag; //adding new div tag inside option_tag
     
