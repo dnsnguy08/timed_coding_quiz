@@ -4,38 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Timed Coding Quiz</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+
     <div>
         <ul class="top">
             <li><button id="highScores">View Leaderboard</button></li>
             <li class="timer">Time: <span id="countdown"></span></li>
         </ul>
     </div>
-        
+
     <!-- Introduce the game -->
     <div class="intro">
         <h1>Coding Quiz Challenge!</h1>
         <h3>This is a timed quiz on Web Dev fundamentals. Test out your knowledge and see how you stack up against your peers! High scores will be saved to the leaderboard! You will have 1 minute to complete the quiz, wrong answers will drain the timer! Good luck!</h3>
         <button id="startButton">Start Quiz</button>
     </div>
-        
+    
     <!-- Quiz Container -->
     <div class="quizBox">
 
-        <div>
-            <h3 class="question"></h3>
-        </div>
-
+        <div><h3 class="question"></h3></div>
         <div class="option_list"></div>
 
     </div>
 
-
+    <script src="js/questions.js"></script>
     <script src="js/script.js"></script>
-
 </body>
 </html>

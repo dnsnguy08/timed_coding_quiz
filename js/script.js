@@ -1,6 +1,6 @@
 //selecting all required elements
 const startButton = document.querySelector("#startButton");
-const leaderboard = document.querySelector("#scores");
+const leaderboard = document.querySelector("#highScores");
 const questionText = document.querySelector(".question");
 const option_list = document.querySelector(".option_list");
 
@@ -37,7 +37,6 @@ next_btn.onclick = ()=>{
 // getting questions and options from arrays ub questions.js
 function showQuestions(index){
     const questionText = document.querySelector(".question");
-
     //creating a new span and div tag for question and option and passing the value using array index
     let questionTag = '<span>'+ questions[index].numb + ". " + questions[index].question +'</span>';
     let option_tag = '<div class="option"><button>'+ questions[index].options[0] +'</button></div>'
@@ -54,6 +53,7 @@ function showQuestions(index){
         option[i].setAttribute("onclick", 'optionSelected(this)');
     }
 }
+
 
 // if user clicked on option
 function optionSelected(answer){
