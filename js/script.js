@@ -5,6 +5,7 @@ const questionText = document.querySelector(".question");
 const optionList = document.querySelector(".optionList");
 const timer = document.querySelector("#countdown");
 
+//Open leaderboard to view high scores
 leaderboard.addEventListener("click", function(event) {
     var element = event.target;
     console.log(element);
@@ -15,7 +16,7 @@ startButton.addEventListener("click", function(event) {
     var headerText = document.querySelector(".intro h1");
     var infoText = document.querySelector(".intro h3");
     console.log(element);
-    headerText.textContent = ''; //remove intro text once quiz has started
+    headerText.textContent = ''; //remove intro text content once quiz has started
     infoText.textContent = '';  //
     startButton.remove();      //
     if (document.querySelector(".quizBox")) {

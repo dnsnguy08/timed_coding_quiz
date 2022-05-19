@@ -10,7 +10,7 @@
 }
 
 body{
-    background: #007bff;
+    background: #50a1f7;
 }
 
 .intro,
@@ -39,6 +39,16 @@ body{
     gap: 6rem;
     justify-content: center;
 }
+
+button:hover {
+    cursor: pointer;
+    background-color: paleturquoise;
+}
+
+#optionResult {
+    font-style: italic;
+}
+
 /* .resultsBox {
     display: flex;
     justify-content: space-evenly;
