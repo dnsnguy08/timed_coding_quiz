@@ -4,6 +4,11 @@
     justify-content: space-between;
 }
 
+.timer{
+    background-color: white;
+    padding: 35px;
+}
+
 body{
     background: #007bff;
 }

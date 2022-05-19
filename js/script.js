@@ -13,13 +13,12 @@ startButton.addEventListener("click", function(event) {
     var element = event.target;
     var headerText = document.querySelector(".intro h1");
     var infoText = document.querySelector(".intro h3");
-
     console.log(element);
-    headerText.textContent = '';
-    infoText.textContent = '';
-    startButton.remove();
+    headerText.textContent = ''; //remove intro text once quiz has started
+    infoText.textContent = '';  //
+    startButton.remove();      //
     if (document.querySelector(".quizBox")) {
-        showQuestions(0);
+        showQuestions(0); //show the first question by adding the content in quizBox
     }
 });
 
@@ -28,7 +27,7 @@ let questionNum = 1;
 let userScore = 0;
 const buttonPress = document.querySelector('.option button');
 
-// if Next Que button clicked
+// if any option button is clicked
 buttonPress.onclick = function click() {
     console.log('weeee');
     if(questionCount < questions.length - 1){ //if question count is less than total question length
@@ -39,34 +38,34 @@ buttonPress.onclick = function click() {
     }
 }
 
-// getting questions and options from arrays ub questions.js
+// getting questions and options from arrays in questions.js
 function showQuestions(index){
     const questionText = document.querySelector(".question");
-    //creating a new span and div tag for question and option and passing the value using array index
+    //use array index to create a new span and div tag for question + options
     let questionTag = '<span>'+ questions[index].numb + ". " + questions[index].question +'</span>';
-    let option_tag = '<div><button class="option">'+ questions[index].options[0] +'</button></div>'
-    + '<div><button class="option">'+ questions[index].options[1] +'</button></div>'
-    + '<div><button class="option">'+ questions[index].options[2] +'</button></div>'
-    + '<div><button class="option">'+ questions[index].options[3] +'</button></div>';
+    let option_tag = '<div class="option"><button>'+ questions[index].options[0] +'</button></div>'
+    + '<div class="option"><button>'+ questions[index].options[1] +'</button></div>'
+    + '<div class="option"><button>'+ questions[index].options[2] +'</button></div>'
+    + '<div class="option"><button>'+ questions[index].options[3] +'</button></div>';
     questionText.innerHTML = questionTag; //adding new span tag inside questionTag
     option_list.innerHTML = option_tag; //adding new div tag inside option_tag
     
     const option = option_list.querySelectorAll(".option");
 
-    // set onclick attribute to all available options
+    // set onclick attribute to all available answer options
     for(i=0; i < option.length; i++){
         option[i].setAttribute("onclick", 'optionSelected(this)');
     }
 }
 
 
-// if user clicked on option
+// if an answer option is clicked
 function optionSelected(answer){
     let selectedAnswer = answer.textContent; //getting user selected option
     let correcAnswer = questions[questionCount].answer; //getting correct answer from array
         
-    if(selectedAnswer == correcAnswer){ //if user selected option is equal to array's correct answer
-        userScore += 1; //upgrading score value with 1
+    if(selectedAnswer == correcAnswer){ // if selected option is correct, add to userScore
+        userScore += 1;
         console.log('correct');
     }else{
         console.log('wrong')
