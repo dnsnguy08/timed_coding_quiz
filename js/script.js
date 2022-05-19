@@ -11,8 +11,13 @@ leaderboard.addEventListener("click", function(event) {
 // Start the quiz after startButton is clicked
 startButton.addEventListener("click", function(event) {
     var element = event.target;
-    console.log(element);
+    var headerText = document.querySelector(".intro h1");
+    var infoText = document.querySelector(".intro h3");
 
+    console.log(element);
+    headerText.textContent = '';
+    infoText.textContent = '';
+    startButton.remove();
     if (document.querySelector(".quizBox")) {
         showQuestions(0);
     }
@@ -21,10 +26,10 @@ startButton.addEventListener("click", function(event) {
 let questionCount = 0;
 let questionNum = 1;
 let userScore = 0;
-const next_btn = document.getElementById('option');
+const buttonPress = document.querySelector('.option button');
 
 // if Next Que button clicked
-next_btn.onclick = function click() {
+buttonPress.onclick = function click() {
     console.log('weeee');
     if(questionCount < questions.length - 1){ //if question count is less than total question length
         questionCount++; //increment the questionCount value
