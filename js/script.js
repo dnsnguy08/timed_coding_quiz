@@ -3,6 +3,7 @@ const startButton = document.querySelector("#startButton");
 const leaderboard = document.querySelector("#highScores");
 const questionText = document.querySelector(".question");
 const optionList = document.querySelector(".optionList");
+const timer = document.querySelector("#countdown");
 
 leaderboard.addEventListener("click", function(event) {
     var element = event.target;
@@ -20,11 +21,13 @@ startButton.addEventListener("click", function(event) {
     if (document.querySelector(".quizBox")) {
         showQuestions(0); //show the first question by adding the content in quizBox
     }
+    countdown(); // start timer once start button is clicked
 });
 
 let questionCount = 0;
 let questionNum = 1;
 let userScore = 0;
+let timeLeft = 60;
 const buttonPress = document.querySelector('.option button');
 
 // if any option button is clicked
@@ -36,6 +39,17 @@ buttonPress.onclick = function click() {
         showQuestions(questionCount); //calling showQuestions function
 
     }
+}
+// Countdown function
+function countdown() {
+    var timeInterval = setInterval(function() {
+        timeLeft--;
+        timer.textContent = timeLeft;
+        if (timeLeft === 0) {
+            clearInterval(timeInterval);
+            timer.textContent = " ";
+        }
+    }, 1000);
 }
 
 // getting questions and options from arrays in questions.js
@@ -76,6 +90,6 @@ function optionSelected(answer){
         console.log('wrong');
         totalText.textContent = 'Score: ' + userScore;
         optionResult.textContent = 'Wrong!';
-
+        timeLeft -= 8; // remove 8 seconds from the timer if a wrong answer is selected
     }
 }
