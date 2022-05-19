@@ -63,11 +63,19 @@ function showQuestions(index){
 function optionSelected(answer){
     let selectedAnswer = answer.textContent; //getting user selected option
     let correcAnswer = questions[questionCount].answer; //getting correct answer from array
-        
+    let optionResult = document.querySelector('#optionResult');
+    let totalText = document.querySelector('.totalQuestion');
+
     if(selectedAnswer == correcAnswer){ // if selected option is correct, add to userScore
         userScore += 1;
         console.log('correct');
+        totalText.textContent = 'Score: ' + userScore;
+        optionResult.textContent = 'Correct!';
+        
     }else{
-        console.log('wrong')
+        console.log('wrong');
+        totalText.textContent = 'Score: ' + userScore;
+        optionResult.textContent = 'Wrong!';
+
     }
 }

@@ -30,6 +30,15 @@ body{
 
 }
 
+.quizBox {
+    padding-bottom: 60px;
+}
+
+.bottom {
+    display: flex;
+    gap: 6rem;
+    justify-content: center;
+}
 /* .resultsBox {
     display: flex;
     justify-content: space-evenly;
