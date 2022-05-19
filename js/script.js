@@ -2,7 +2,7 @@
 const startButton = document.querySelector("#startButton");
 const leaderboard = document.querySelector("#highScores");
 const questionText = document.querySelector(".question");
-const option_list = document.querySelector(".option_list");
+const optionList = document.querySelector(".optionList");
 
 leaderboard.addEventListener("click", function(event) {
     var element = event.target;
@@ -43,14 +43,14 @@ function showQuestions(index){
     const questionText = document.querySelector(".question");
     //use array index to create a new span and div tag for question + options
     let questionTag = '<span>'+ questions[index].numb + ". " + questions[index].question +'</span>';
-    let option_tag = '<div class="option"><button>'+ questions[index].options[0] +'</button></div>'
+    let optionTag = '<div class="option"><button>'+ questions[index].options[0] +'</button></div>'
     + '<div class="option"><button>'+ questions[index].options[1] +'</button></div>'
     + '<div class="option"><button>'+ questions[index].options[2] +'</button></div>'
     + '<div class="option"><button>'+ questions[index].options[3] +'</button></div>';
     questionText.innerHTML = questionTag; //adding new span tag inside questionTag
-    option_list.innerHTML = option_tag; //adding new div tag inside option_tag
+    optionList.innerHTML = optionTag; //adding new div tag inside option_tag
     
-    const option = option_list.querySelectorAll(".option");
+    const option = optionList.querySelectorAll(".option");
 
     // set onclick attribute to all available answer options
     for(i=0; i < option.length; i++){
@@ -64,7 +64,7 @@ function optionSelected(answer){
     let selectedAnswer = answer.textContent; //getting user selected option
     let correcAnswer = questions[questionCount].answer; //getting correct answer from array
     let optionResult = document.querySelector('#optionResult');
-    let totalText = document.querySelector('.totalQuestion');
+    let totalText = document.querySelector('#totalScore');
 
     if(selectedAnswer == correcAnswer){ // if selected option is correct, add to userScore
         userScore += 1;
