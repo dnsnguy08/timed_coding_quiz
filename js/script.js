@@ -4,15 +4,19 @@ const leaderboard = document.querySelector("#highScores");
 const questionText = document.querySelector(".question");
 const optionList = document.querySelector(".optionList");
 const timer = document.querySelector("#countdown");
+let optionResult = document.querySelector('#optionResult'); //
+let totalText = document.querySelector('#totalScore'); //
 const resultText = document.querySelector(".quizFinish");
 const initialsInput = document.querySelector(".saveScore");
 const form = document.querySelector('.initials');
 const saveButton = document.querySelector('#saveButton');
+const showHighScores = document.querySelector('.leaderboard ul');
 
 //Open leaderboard to view high scores
 leaderboard.addEventListener("click", function(event) {
     var element = event.target;
     console.log(element);
+    showLeaderboard();
 });
 
 // Start the quiz after startButton is clicked
@@ -24,6 +28,7 @@ startButton.addEventListener("click", function(event) {
     headerText.textContent = ''; //remove intro text content once quiz has started
     infoText.textContent = '';  //
     startButton.remove();      //
+    // showHighScores.style.display = 'none';
     if (document.querySelector(".quizBox")) {
         showQuestions(0); //show the first question by adding the content in quizBox
     }
@@ -79,8 +84,8 @@ function showQuestions(index){
 function optionClicked(answer){
     let selectedAnswer = answer.textContent; //getting user selected option
     let correcAnswer = questions[questionCount].answer; //getting correct answer from array
-    let optionResult = document.querySelector('#optionResult');
-    let totalText = document.querySelector('#totalScore');
+    // let optionResult = document.querySelector('#optionResult');
+    // let totalText = document.querySelector('#totalScore');
     if(selectedAnswer == correcAnswer){ // if selected option is correct, add to userScore
         userScore += 200;
         console.log('correct');
@@ -105,6 +110,7 @@ function optionClicked(answer){
         timer.textContent = clearInterval(timer);
         questionText.textContent = 'All Done!';
         optionList.remove();
+        showHighScores.style.display = 'block';
         showResults();
     }
 }
@@ -120,27 +126,37 @@ function showResults(){
     
 }
 
-// form.addEventListener("submit", function(event){
-//     event.preventDefault();
-// });
-
-// saveButton.addEventListener('click', function(event) {
-//     event.preventDefault();
-//     localStorage.setItem('name', saveButton.value);
-
-//     renderScores();
-// });
+function showLeaderboard() {
+    let parseStorage = JSON.parse(localStorage.getItem('dataObject'));
+    for (let i = 0; i < parseStorage.length; i++) {
+        let theScores = JSON.stringify(parseStorage[i]);
+        let playerTag = '<li>'+ `${theScores}` +'</li>';
+        showHighScores.innerHTML += playerTag;  
+    }
+}
 
 function renderScores() {
     event.preventDefault();
+    let dataObject = [];
     let tryThis = document.querySelector('.initials');
-    localStorage.setItem('name', tryThis.value);
-    localStorage.setItem('score', userScore);
 
-    // renderScores();
-    if (localStorage.getItem('name')) {
-        let name = localStorage.getItem('name');
-        let playerScore = `${name} - ${userScore}`;
-        questionText.textContent = playerScore;
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.getItem('dataObject') && localStorage.getItem('dataObject').length > 0)
+            dataObject = JSON.parse(localStorage.getItem('dataObject'));
+        const player = {
+            name: tryThis.value,
+            score: userScore
+        };
+        dataObject.push(player);
+        localStorage.setItem('dataObject', JSON.stringify(dataObject));
     }
+
+    totalText.remove();
+    optionResult.remove();
+    showLeaderboard();
+
+    let playerName = JSON.parse(localStorage.getItem('player'));
+    let playerScore = `Hey '${tryThis.value}' got a score of ${userScore}!`;
+    questionText.textContent = playerScore;
+    tryThis.value = '';
 }
