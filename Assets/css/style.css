@@ -1,20 +1,29 @@
-body {
-    background: mediumturquoise;
-}
-.menu {
+.top {
     display: flex;
     list-style: none;
     justify-content: space-between;
 }
 
-.intro {
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
-    flex-wrap: wrap;
+.timer{
+    background-color: white;
+    padding: 35px;
+    margin-right: 20px;
 }
 
+body{
+    background: #50a1f7;
+}
+
+.intro,
+.quizBox,
+.result_box{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
 
 .intro h3 {
     width: 50%;
@@ -22,13 +31,26 @@ body {
 
 }
 
-.buttons {
-    display: flex;
-    flex-direction: column;
-    margin-right: 250px;
-    gap: .5rem;
+.quizBox {
+    padding-bottom: 60px;
 }
 
-footer {
-    display: inline;
+.bottom {
+    display: flex;
+    gap: 6rem;
+    justify-content: center;
 }
+
+button:hover {
+    cursor: pointer;
+    background-color: paleturquoise;
+}
+
+#optionResult {
+    font-style: italic;
+}
+
+/* .resultsBox {
+    display: flex;
+    justify-content: space-evenly;
+} */
