@@ -41,7 +41,8 @@ It will have a clean, polished, and responsive user interface.
 
 ### Screenshot
 
-<!-- ![Password Generator Screenshot](./assets/screenshot.jpg) -->
+![Timed Quiz Screenshot](./Assets/imagess/front_page.png)
+![Active Quiz Screenshot](./Assets/imagess/active_quiz.png)
 
 ### Links
 
