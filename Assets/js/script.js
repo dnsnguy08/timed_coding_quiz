@@ -63,14 +63,14 @@ function countdown() {
 function showQuestions(index){
     //use questions array index to create a new span and div tag for question + options
     let questionTag = '<span>'+ questions[index].numb + ". " + questions[index].question +'</span>';
-    let optionTag = '<div class="option"><button>'+ questions[index].options[0] +'</button></div>'
-    + '<div class="option"><button>'+ questions[index].options[1] +'</button></div>'
-    + '<div class="option"><button>'+ questions[index].options[2] +'</button></div>'
-    + '<div class="option"><button>'+ questions[index].options[3] +'</button></div>';
+    let optionTag = '<div><button class="option">'+ questions[index].options[0] +'</button></div>'
+    + '<div><button class="option">'+ questions[index].options[1] +'</button></div>'
+    + '<div><button class="option">'+ questions[index].options[2] +'</button></div>'
+    + '<div><button class="option">'+ questions[index].options[3] +'</button></div>';
     questionText.innerHTML = questionTag; //adding new span tag inside questionText
     optionList.innerHTML = optionTag; // adding new div tag with answer options inside optionList
     
-    const option = optionList.querySelectorAll(".option button");
+    const option = optionList.querySelectorAll(".option");
 
     // set onclick attribute to all available answer options
     for(i=0; i < option.length; i++){

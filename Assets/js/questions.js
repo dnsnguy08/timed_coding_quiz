@@ -24,49 +24,35 @@ let questions = [
   },
     {
     numb: 3,
-    question: "What does PHP stand for?",
-    answer: "Hypertext Preprocessor",
+    question: 'How to write an IF statement for executing some code if "i" is NOT equal to 5?',
+    answer: "if (i != 5)",
     options: [
-      "Hypertext Preprocessor",
-      "Hypertext Programming",
-      "Hypertext Preprogramming",
-      "Hometext Preprocessor"
+      "if i <> 5",
+      "if i != 5 then",
+      "if (i <> 5)",
+      "if (i != 5)"
     ]
   },
     {
     numb: 4,
-    question: "What does SQL stand for?",
-    answer: "Structured Query Language",
+    question: "How do you write 'Hello World' in an alert box?",
+    answer: "alert('Hello World')",
     options: [
-      "Stylish Question Language",
-      "Stylesheet Query Language",
-      "Statement Question Language",
-      "Structured Query Language"
+      "msg('Hello World')",
+      "msgbox('Hello World')",
+      "alertBox('Hello World')",
+      "alert('Hello World')"
     ]
   },
     {
     numb: 5,
-    question: "What does XML stand for?",
-    answer: "eXtensible Markup Language",
+    question: "How to write an IF statement in JavaScript?",
+    answer: "if (i == 5)",
     options: [
-      "eXtensible Markup Language",
-      "eXecutable Multiple Language",
-      "eXTra Multi-Program Language",
-      "eXamine Multiple Language"
+      "if i = 5 then",
+      "if (i == 5)",
+      "if i = 5",
+      "if i == 5 then"
     ]
   },
-  // you can uncomment the below codes and make duplicate as more as you want to add question
-  // but remember you need to give the numb value serialize like 1,2,3,5,6,7,8,9.....
-
-  //   {
-  //   numb: 6,
-  //   question: "Your Question is Here",
-  //   answer: "Correct answer of the question is here",
-  //   options: [
-  //     "Option 1",
-  //     "option 2",
-  //     "option 3",
-  //     "option 4"
-  //   ]
-  // },
 ];
