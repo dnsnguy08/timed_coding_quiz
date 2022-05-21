@@ -41,8 +41,8 @@ It will have a clean, polished, and responsive user interface.
 
 ### Screenshot
 
-![Timed Quiz Screenshot](./Assets/imagess/front_page.png)
-![Active Quiz Screenshot](./Assets/imagess/active_quiz.png)
+![Timed Quiz Screenshot](./Assets/images/front_page.png)
+![Active Quiz Screenshot](./Assets/images/active_quiz.png)
 
 ### Links
 
